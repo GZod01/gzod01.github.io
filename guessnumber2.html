@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Commencer le jeu</h1>
+    <input type="text" id="input1" placeholder="Entrez votre nombre entre 1 et 100">
+    <button id="submit">Soumettre</button>
+    <ul id="ul1"></ul>
+    <script>
+        var emplacement = document.getElementById("ul1");
+        var a = Math.random
+        var randint = () => Math.round(a() * 100)
+        var nombre = randint()
+        var i = 0
+
+        var myScript = () => {
+            var x = document.getElementById("input1").value
+            x = parseInt(x)
+            function write() {
+                    var txt = document.createElement("li")
+                    txt.innerHTML = x + z
+                    emplacement.appendChild(txt)
+                    i=i+1
+                } 
+            if (x < nombre) {
+                var z = " plus grand"
+                write()               
+            }
+            if (x > nombre) {
+                var z = " plus petit"
+                write()
+            }
+            if (x == nombre) {
+                var z = " Eureka vous avez gagné!"
+                write()
+                var txt = document.createElement("li")
+                emplacement.appendChild(txt)
+                txt.innerHTML = "vous avez réussi en " + (i) + " tours"
+            }
+        }
+        var objet = document.getElementById("submit");
+        objet.addEventListener("click", myScript);
+    </script>
+</body>
+
+</html>
