@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Commencer le jeu</h1>
+    <button id="playbutton">Commencer le jeu</button>
+    <ul id="ul1"></ul>
+    <script>
+        var emplacement = document.getElementById("ul1");
+        var a = Math.random
+        var randint= () =>Math.round(a()* 100)
+        var nombre = randint()
+        var i = 0
+        var myScript=()=>{
+            while (true){
+                var x = prompt("valeur entre 0 et 100")
+                if (x=="exit"){
+                    break
+                }
+                x = parseInt(x)
+                if (x<nombre){
+                    alert("plus grand")
+                    i=i+1
+                    var txt = document.createElement("li")
+                    txt.innerHTML = x
+                    emplacement.appendChild(txt)
+                }
+                if (x>nombre){
+                    alert("plus petit")
+                    i=i+1
+                    var txt = document.createElement("li")
+                    txt.innerHTML = x
+                    emplacement.appendChild(txt)
+                }
+                if (x==nombre){
+                    alert("Eureka vous avez gagné!")
+                    i=i+1
+                    var txt = document.createElement("li")
+                    txt.innerHTML = x
+                    emplacement.appendChild(txt)
+                    break
+                }
+            }
+            var txt = document.createElement("li")
+            txt.innerHTML = "vous avez réussi en " + (i) + " tours!"
+            emplacement.appendChild(txt)
+        }
+        var objet = document.getElementById("playbutton"); 
+        objet.addEventListener("click", myScript); 
+    </script>
+</body>
+</html>
