@@ -46,8 +46,13 @@
                 txt.innerHTML = "vous avez réussi en " + (i) + " tours"
             }
         }
+        var newgame = () => {
+            reload()
+        }
         var objet = document.getElementById("submit");
         objet.addEventListener("click", myScript);
+        var ngobjet = document.getElementById("newgame");
+        objet.addEventListener("click", newgame);
     </script>
 </body>
 
