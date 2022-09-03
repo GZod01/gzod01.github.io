@@ -21,7 +21,9 @@
         var randint = () => Math.round(a() * 100)
         var nombre = randint()
         var i = 0
-
+        var newgame = () => {
+            location.reload()
+        }
         var myScript = () => {
             var x = document.getElementById("input1").value
             x = parseInt(x)
@@ -47,12 +49,9 @@
                 txt.innerHTML = "vous avez réussi en " + (i) + " tours"
             }
         }
-        var newgame = () => {
-            location.reload()
-        }
         var objet = document.getElementById("submit");
         objet.addEventListener("click", myScript);
-        var ngobjet = document.getElementById("newgame");
+        var objet = document.getElementById("newgame");
         objet.addEventListener("click", newgame);
     </script>
 </body>
