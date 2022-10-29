@@ -16,12 +16,12 @@
     <script>
         message=""
         mdp=""
-        var encrypt=CryptoJS.AES.encrypt(message, mdp).value;
-        var decrypt=CryptoJS.AES.decrypt(message, mdp).value;
+        var encrypt=CryptoJS.AES.encrypt(message,mdp).value;
+        var decrypt=CryptoJS.AES.decrypt(message,mdp).value;
         function crypter(){
             var message= document.getElementById("inputmessage").value;
             var mdp= document.getElementById("inputmdp").value;
-            var encrypted= encrypt(message,mdp);
+            var encrypted= encrypt;
             function write(){
                 const text = document.getElementById('message');
                 text.textContent = "Le message encrypté est: \n" + encrypted;
@@ -31,7 +31,7 @@
         function decrypter(){
             var message= document.getElementById("inputmessage").value;
             var mdp= document.getElementById("inputmdp").value;
-            var decrypted= decrypt(message,mdp);
+            var decrypted= decrypt;
             function write(){
                 const text = document.getElementById('message');
                 text.textContent = "Le message décrypté est: \n" + decrypted;
