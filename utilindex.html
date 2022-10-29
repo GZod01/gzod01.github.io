@@ -19,8 +19,8 @@
         var encrypt=CryptoJS.AES.encrypt(message, mdp).value;
         var decrypt=CryptoJS.AES.decrypt(message, mdp).value;
         function crypter(){
-            var message= getElementById("inputmessage").value;
-            var mdp= getElementById("inputmdp").value;
+            var message= document.getElementById("inputmessage").value;
+            var mdp= document.getElementById("inputmdp").value;
             var encrypted= encrypt(message,mdp);
             function write(){
                 const text = document.getElementById('message');
@@ -29,8 +29,8 @@
             write()
         }
         function decrypter(){
-            var message= getElementById("inputmessage").value;
-            var mdp= getElementById("inputmdp").value;
+            var message= document.getElementById("inputmessage").value;
+            var mdp= document.getElementById("inputmdp").value;
             var decrypted= decrypt(message,mdp);
             function write(){
                 const text = document.getElementById('message');
@@ -38,9 +38,9 @@
             }
             write()
         }
-        var objet= getElementById("encrsubmit");
+        var objet= document.getElementById("encrsubmit");
         objet.addEventListener("click", crypter);
-        var objet= getElementById("decrsubmit");
+        var objet= document.getElementById("decrsubmit");
         objet.addEventListener("click", decrypter);
 
     </script>
