@@ -1,1 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outils</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+</head>
+<body>
+    <a><input type="text" id="inputmessage" style="padding: 10px; border: 2px solid rgb(176, 176, 176);" placeholder="Message à coder">
+    <input type="text" id="inputmdp" style="padding: 10px; border: 2px solid rgb(176, 176, 176);" placeholder="Mot de Passe">
+    <button id="encrsubmit" style="padding: 10px; border: 2px solid rgb(42, 19, 117);">Soumettre le message à encoder</button>
+    <button id="decrsubmit" style="padding: 10px; border: 2px solid rgb(42, 19, 117);">Soumettre le message à décoder</button>
+    <p style="padding: 10px; border: 2px solid rgb(65, 65, 65);" id="message"></p>
+    <script>
+        message=""
+        mdp=""
+        var encrypt=CryptoJS.AES.encrypt(message, mdp).value;
+        var decrypt=CryptoJS.AES.decrypt(message, mdp).value;
+        function crypter(){
+            var message= getElementById("inputmessage").value;
+            var mdp= getElementById("inputmdp").value;
+            var encrypted= encrypt(message,mdp);
+            function write(){
+                const text = document.getElementById('message');
+                text.textContent = "Le message encrypté est: \n" + encrypted;
+            }
+            write()
+        }
+        function decrypter(){
+            var message= getElementById("inputmessage").value;
+            var mdp= getElementById("inputmdp").value;
+            var decrypted= decrypt(message,mdp);
+            function write(){
+                const text = document.getElementById('message');
+                text.textContent = "Le message décrypté est: \n" + decrypted;
+            }
+            write()
+        }
+        var objet=getElementById("encrsubmit");
+        objet.addEventListener("click", crypter);
+        var objet=getElementById("decrsubmit");
+        objet.addEventListener("click", decrypter);
 
+    </script>
+</body>
+</html>
