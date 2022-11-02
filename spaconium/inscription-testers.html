@@ -6,11 +6,15 @@
   <body class="container mt-5">
     <form onsubmit="sendContact(event)">
       <div class="mb-3">
-        <label for="emailInput" class="form-label">Enter your email address</label>
+        <label for="emailInput" class="form-label">Entrez votre adresse email</label>
         <input type="email" class="form-control" id="emailInput">
       </div>
       <div class="mb-3">
-        <label for="messageInput" class="form-label">Enter your message</label>
+        <label for="discordInput" class="form-label">Entrez votre username Discord (ex: username#0000)</label>
+        <input type="text" class="form-control" id="discordInput">
+      </div>
+      <div class="mb-3">
+        <label for="messageInput" class="form-label">Entrez votre texte de candidature</label>
         <textarea class="form-control" id="messageInput" rows="3"></textarea>
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
@@ -23,12 +27,15 @@
           .getElementById('emailInput').value;
         const senderMessage = document
           .getElementById('messageInput').value;
+        const senderdiscord = document
+          .getElementById('discordInput').value;
 
         const webhookBody = {
           embeds: [{
             title: 'Contact Form Submitted',
             fields: [
-              { name: 'Sender', value: senderEmail },
+              { name: 'Email du candidat', value: senderEmail },
+              { name: 'Discord du candidat'; value: senderdiscord},
               { name: 'Message', value: senderMessage }
             ]
           }],
