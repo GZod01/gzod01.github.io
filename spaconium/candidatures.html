@@ -6,15 +6,15 @@
   <body class="container mt-5">
     <form onsubmit="sendContact(event)">
       <div class="mb-3">
-        <label for="emailInput" class="form-label">Entrez votre adresse email<p title="Obligatoire" style="color: red">*</p>;</label>
+        <label for="emailInput" class="form-label">Entrez votre adresse email<abbr title="Obligatoire" style="color: red">*</abbr></label>
         <input type="email" class="form-control" id="emailInput">
       </div>
       <div class="mb-3">
-        <label for="discordInput" class="form-label">Entrez votre username Discord (ex: username#0000)<p title="Obligatoire" style="color: red">*</p></label>
+        <label for="discordInput" class="form-label">Entrez votre username Discord (ex: username#0000)<abbr title="Obligatoire" style="color: red">*</abbr></label>
         <input type="text" class="form-control" id="discordInput">
       </div>
       <div class="mb-3">
-        <label for="messageInput" class="form-label">Entrez votre texte de candidature<p title="Obligatoire" style="color: red">*</p></label>
+        <label for="messageInput" class="form-label">Entrez votre texte de candidature<abbr title="Obligatoire" style="color: red">*</abbr></label>
         <textarea class="form-control" id="messageInput" rows="3"></textarea>
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
