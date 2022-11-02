@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spaconium</title>
+</head>
+<body>
+    <div class="Title"><h1>Spaconium</h1></div>
+    <div class="Description"><h3>Le mod Minecraft Spaconium est un mod français regroupant plusieurs fonctionnalités:</h3>
+    <div gzod-include-html="admin-spaconium.html"></div></div>
+    
+
+
+
+
+
+
+    <script>
+        function includeHTML() {
+          var z, i, elmnt, file, xhttp;
+          z = document.getElementsByTagName("*");
+          for (i = 0; i < z.length; i++) {
+            elmnt = z[i];
+            file = elmnt.getAttribute("gzod-include-html");
+            if (file) {
+              xhttp = new XMLHttpRequest();
+              xhttp.onreadystatechange = function() {
+                if (this.readyState == 4) {
+                  if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                  if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                  elmnt.removeAttribute("gzod-include-html");
+                  includeHTML();
+                }
+              }
+              xhttp.open("GET", file, true);
+              xhttp.send();
+              return;
+            }
+          }
+        }
+        </script>
+</body>
+</html>
