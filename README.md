@@ -11,7 +11,7 @@ Il y a les pages principales du mod Spaconium (actualités, etc.) ainsi que les 
 Il y a des pages pour les autres projets comme les bots discord, des jeu devine mon nombre, un encrypteur de message, etc.
 - ### Mon serveur discord:
 Mon serveur "accueil" avec un accès à toutes mes communautés.
-<a href="https://discord.gg/4Vb5Cyp3YZ>Rejoindre</a>
+<a href="https://discord.gg/4Vb5Cyp3YZ">Rejoindre</a>
 
 ## [EN]
 This is a french website.
@@ -25,4 +25,4 @@ There are the main pages of the Spaconium Minecraft Mod (new, update, etc.) and 
 There are pages of other project like the discords bot, the guess number game, the message encrypt system, etc.
 - ### My Discord Server:
 My "home" server with access to all my communities
-<a href="https://discord.gg/4Vb5Cyp3YZ>Join</a>
+<a href="https://discord.gg/4Vb5Cyp3YZ">Join</a>
