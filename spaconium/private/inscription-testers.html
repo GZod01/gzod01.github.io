@@ -43,7 +43,7 @@
         };
 
         var cryptedwebhookUrl = 'U2FsdGVkX1+OrQboEDZlmvtjvdiikmEq3sntEJjwtH26pV69zdUuX+4x03rAZ17gERXx2T0EW9sgmrEODMF3vVQEBRt3NwbsvNnNbF/5cym8ltpcYkanD52JQBaEa351cZPVXhTjtTsPEJSeSwwpq8dZRfYNaqfpIvckfej+85hHVY3JDKsN77jkpwkejPw4izksf8d5bxBOjMzeFC1Iug=='
-        var decryptedwebhookUrl = CryptoJS.AES.decrypt(crytptedwebhookUrl,"spaconiummdp");
+        var decryptedwebhookUrl = CryptoJS.AES.decrypt(cryptedwebhookUrl,"spaconiummdp");
         const webhookUrl = decryptedwebhookUrl.toString(CryptoJS.enc.Utf8);
 
         const response = await fetch(webhookUrl, {
