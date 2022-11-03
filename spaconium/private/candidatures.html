@@ -40,8 +40,9 @@
             ]
           }],
         };
-
-        const webhookUrl = 'https://canary.discord.com/api/webhooks/1037419664671768586/PHxSTBs_tMeW1jf3LjpiIpS4jVpOcwlq1_SZbxbPFoOqD0UE6k9ZmKo6s-L8TTa6DZC4';
+        const cryptedwebhookUrl = 'U2FsdGVkX18ZWJ8PR6UAnbvCRfaogjxRPkAQgRgRwBhzfbTig1EC7wODwNg+jKcNLFmzGKSrR6r3CfYABBy4Jmbi6hJnh/USeq3J7OX91fq+JjBMwnmKKxvKkZ0Gtg79ziwsZTEcsRJLtQdAEvb2nmKDru7GRNh7HeJUq/R+PsakC0M2r33Ix6ux9qOlPbaSIkeWoxQO/YSE202RfY0wBQ=='
+        const decryptedwebhookUrl = CryptoJS.AES.decrypt(crytptedwebhookUrl,"spaconiummdp");
+        const webhookUrl = decryptedwebhookUrl.toString(CryptoJS.enc.Utf8);
 
         const response = await fetch(webhookUrl, {
           method: 'POST',
