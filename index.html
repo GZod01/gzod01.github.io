@@ -14,6 +14,23 @@
         <a href="gamesindex.html">Jeux</a>
         <a href="utilindex.html"> Utiles </a>
     </div>
-    <zero-md src="README.md"></zero-md>
+    <div class= "languagebar">
+        <a href="#" onClick="changelang('fr')">Français</a>
+        <a href="#" onClick="changelang('en')">English</a>
+    </div>
+    <zero-md id="readme" src="README.md"></zero-md>
+    <script>
+        var userLang = navigator.language || navigator.userLanguage;
+        userLang= userLang.substr(0,2);
+        changelang(userLang)
+        function changelang(lang){
+            if (lang == 'fr'){
+                document.getElementById("readme").href = "Readme.md";
+            }
+            else {
+                document.getElementById("readme").href = "Readme.en.md;
+            }
+        }
+    </script>
 </body>
 </html>
