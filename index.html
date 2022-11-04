@@ -7,18 +7,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2/webcomponents-loader.min.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@1/src/zero-md.min.js"></script>
     <title>Index</title>
-</head>
-<body>
-    <div class="topnavbar">
-        <a href="index.html">Accueil</a>
-        <a href="gamesindex.html">Jeux</a>
-        <a href="utilindex.html"> Utiles </a>
-    </div>
-    <div class= "languagebar">
-        <a onClick="changelang('fr')">Français</a>
-        <a onClick="changelang('en')">English</a>
-    </div>
-    <zero-md id="readme" src="README.md"></zero-md>
     <script>
         var userLang = navigator.language || navigator.userLanguage;
         userLang= userLang.substr(0,2);
@@ -32,5 +20,17 @@
             }
         }
     </script>
+</head>
+<body>
+    <div class="topnavbar">
+        <a href="index.html">Accueil</a>
+        <a href="gamesindex.html">Jeux</a>
+        <a href="utilindex.html"> Utiles </a>
+    </div>
+    <div class= "languagebar">
+        <a onClick="changelang('fr')">Français</a>
+        <a onClick="changelang('en')">English</a>
+    </div>
+    <zero-md id="readme" src="README.md"></zero-md>
 </body>
 </html>
