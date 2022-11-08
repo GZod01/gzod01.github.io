@@ -1874,22 +1874,23 @@
                     return (i < c ? ((i + S(-i / 900) * 10) & 16) : i & 13) ? q : -q;
                 }
                 var pagepage = document.getElementById("jeu")
+                var pagepagepage = document.getElementById("jeu")
                 function sauvegarder(){
                     place = prompt("Place ou sauvegarder: ")
                     texte= prompt("Texte à indiquer")
                     place=parseInt(place)
                     levels[place]={
                         hash: t.hash,
-                        I: [],
-                        J: [],
+                        I: t.I,
+                        J: t.J,
                         txt: texte,
                         ac: 254
                     }
                     let x = localStorage.setItem(pagepage, HTMLcontent);
                 }
                 function reimport(){
-                    let result = localStorage.getItem(levels);
-                    pagepage.write =result;
+                    let result = localStorage.getItem(pagepage);
+                    pagepagepage.write =result;
                 }
                 var sauvegarderbouton = document.getElementById("Savebutton");
                 sauvegarderbouton.addEventListener("click", sauvegarder);
