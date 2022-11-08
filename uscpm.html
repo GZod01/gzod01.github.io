@@ -1,6 +1,5 @@
-"inspired from super-chrono-portal-maker"
 <meta charset=utf-8>
-<title>UPDATED Super Chrono Portal Maker</title>
+<title>Super Chrono Portal Maker</title>
 <body id="jeu" bgcolor=0>
     <center>
         <canvas width=1280 height=648 style="border:1px solid;background:#5C94FC;cursor:crosshair" id=a></canvas>
@@ -11,6 +10,7 @@
             - <a href=# onclick='location="https://www.reddit.com/r/tinycode/comments/52gjg7/js13k_super_chrono_portal_maker/"' style="color:#444;font:normal 15px arial">Discuss</a>
             - <a href=# onclick="location='//xem.github.io/articles#js13k2016'" style="color:#444;font:normal 15px arial">Making-of</a>
             - <button id="Savebutton">Sauvegarder</button>
+            - <button onclick="makeimport()">MakeImport</button>
             <script>
                 c = a.getContext("2d");
                 localStorage["scpm"] = localStorage["scpm"] || 1;
@@ -1252,10 +1252,10 @@
                         }
                         c.fillText("\u25c0", 40, 70);
                         c.fillStyle = "#000";
-                        c.fillText("MY LEVELS", 642, 72);
+                        c.fillText("JS13K LEVELS", 642, 72);
                         c.fillText("TWITTER LEVELS", 642, 472);
                         c.fillStyle = "#fff";
-                        c.fillText(" MY  LEVELS", 640, 70);
+                        c.fillText("JS13K LEVELS", 640, 70);
                         c.fillText("TWITTER LEVELS", 640, 470);
                         c.fillText("GO", 640, 570);
                         c.fillStyle = "#000";
@@ -1884,24 +1884,31 @@
                 var pagepagepage = document.getElementById("jeu")
                 function sauvegarder(){
                     place = prompt("Place ou sauvegarder: ")
-                    place=parseInt(place)
-                    texte = prompt("Texte: ")
-                    texte2 = null
-                    texte2 = prompt("Texte2: ")
-                    devrecorddev = prompt("DevRecord: ")
-                    devrecorddev = parseInt(devrecorddev)
-                    levels[place]={
-                        hash: t.hash,
-                        I:t.I,
-                        J:t.J,
-                        txt: texte,
-                        txt2: texte2,
-                        ac: devrecorddev
+                    if (place=='make'){
+                        localStorage.setItem('makesave',JSON.stringify(t))
                     }
-                    localStorage.setItem('niveau',JSON.stringify(levels))
-                    localStorage.setItem('storage?', 2)
+                    else{
+                        place=parseInt(place)
+                        texte = prompt("Texte: ")
+                        texte2 = null
+                        texte2 = prompt("Texte2: ")
+                        devrecorddev = prompt("DevRecord: ")
+                        devrecorddev = parseInt(devrecorddev)
+                        levels[place]={
+                            hash: t.hash,
+                            I:t.I,
+                            J:t.J,
+                            txt: texte,
+                            txt2: texte2,
+                            ac: devrecorddev
+                        }
+                        localStorage.setItem('niveau',JSON.stringify(levels))
+                        localStorage.setItem('storage?', 2)
+                    }
                 }
-                
+                function makereimport(){
+                    t= JSON.parse(localStorage.getItem('makesave'))
+                }
                 var sauvegarderbouton = document.getElementById("Savebutton");
                 sauvegarderbouton.addEventListener("click", sauvegarder);
             </script>
