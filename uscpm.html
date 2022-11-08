@@ -1884,7 +1884,19 @@
                 function sauvegarder(){
                     place = prompt("Place ou sauvegarder: ")
                     place=parseInt(place)
-                    levels[place]=t
+                    texte = prompt("Texte: ")
+                    texte2 = null
+                    texte2 = prompt("Texte2: ")
+                    devrecorddev = prompt("DevRecord: ")
+                    devrecorddev = parseInt(devrecorddev)
+                    levels[place]={
+                        hash: t.hash,
+                        I:t.I,
+                        J:t.J,
+                        txt: texte,
+                        txt2: texte2,
+                        ac: devrecorddev
+                    }
                     localStorage.setItem('niveau',JSON.stringify(levels))
                     localStorage.setItem('storage?', 2)
                 }
