@@ -22,8 +22,8 @@
             console.log(mdp);
             var encrypted = CryptoJS.AES.encrypt(message, mdp);
             console.log(encrypted);
-            encrypted = encrypted.toString(CryptoJS.enc.Utf8);
-            console.log(encrypted);
+            var encryptedstring = encrypted.toString(CryptoJS.enc.Utf8);
+            console.log(encryptedstring);
             document.getElementById("message").innerHTML = encrypted
         }
         function decrypter(){
@@ -33,8 +33,8 @@
             console.log(mdp);
             var decrypted = CryptoJS.AES.decrypt(message, mdp);
             console.log(decrypted);
-            decrypted = decrypted.toString(CryptoJS.enc.Utf8);
-            console.log(decrypted);
+            var decryptedstring = decrypted.toString(CryptoJS.enc.Utf8);
+            console.log(decryptedstring);
             document.getElementById("message").innerHTML = decrypted
         }
         var objet= document.getElementById("encrsubmit");
