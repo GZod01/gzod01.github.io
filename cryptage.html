@@ -12,29 +12,30 @@
     <input type="text" id="inputmdp" placeholder="Mot de Passe">
     <button id="encrsubmit" /*style="padding: 10px 24px; border-radius: 4px; background-color: #7487e2;*/">Soumettre le message à encoder</button>
     <button id="decrsubmit" /*style="padding: 10px 24px; border-radius: 4px; background-color: #7487e2;*/">Soumettre le message à décoder</button>
-    <p id="message">message:</p>
+    <label>Message:</label><br><br>
+    <div id="message"></div>
     <script>
         function crypter(){
             var message= JSON.stringify(document.getElementById("inputmessage").value);
+            console.log(message)
             var mdp= JSON.stringify(document.getElementById("inputmdp").value);
+            console.log(mdp)
             var encrypted = CryptoJS.AES.encrypt(message, mdp);
+            console.log(encrypted)
             encrypted = encrypted.toString(CryptoJS.enc.Utf8);
-            function write(variabletowrite){
-                const text = document.getElementById('message');
-                text.innerHTML = (`Le message encrypté est: ${variabletowrite}`);
-            }
-            write(encrypted)
+            console.log(encrypted)
+            document.getElementById("message").innerHTML(encrypted)
         }
         function decrypter(){
-            message= document.getElementById("inputmessage").value;
-            mdp= document.getElementById("inputmdp").value;
+            var message= document.getElementById("inputmessage").value;
+            console.log(message)
+            var mdp= document.getElementById("inputmdp").value;
+            console.log(mdp)
             var decrypted = CryptoJS.AES.decrypt(message, mdp);
+            console.log(decrypted)
             decrypted = decrypted.toString(CryptoJS.enc.Utf8);
-            function write(variabletowrite){
-                const text = document.getElementById('message');
-                text.innerHTML = (`Le message décrypté est: ${variabletowrite}`);
-            }
-            write(decrypted)
+            console.log(decrypted)
+            document.getElementById("message").innerHTML(decrypted)
         }
         var objet= document.getElementById("encrsubmit");
         objet.addEventListener("click", crypter);
