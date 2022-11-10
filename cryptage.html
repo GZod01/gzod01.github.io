@@ -27,9 +27,9 @@
             document.getElementById("message").innerHTML = encrypted
         }
         function decrypter(){
-            var message= document.getElementById("inputmessage").value;
+            var message= JSON.stringify(document.getElementById("inputmessage").value);
             console.log(message);
-            var mdp= document.getElementById("inputmdp").value;
+            var mdp= JSON.stringify(document.getElementById("inputmdp").value);
             console.log(mdp);
             var decrypted = CryptoJS.AES.decrypt(message, mdp);
             console.log(decrypted);
