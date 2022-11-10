@@ -14,29 +14,25 @@
     <button id="decrsubmit" /*style="padding: 10px 24px; border-radius: 4px; background-color: #7487e2;*/">Soumettre le message à décoder</button>
     <p id="message">message:</p>
     <script>
-        var message=""
-        var mdp=""
-        var encrypt=CryptoJS.AES.encrypt();
-        var decrypt=CryptoJS.AES.decrypt();
         function crypter(){
             var message= JSON.stringify(document.getElementById("inputmessage").value);
             var mdp= JSON.stringify(document.getElementById("inputmdp").value);
-            var encrypted= encrypt(message,mdp);
+            var encrypted= CryptoJS.AES.encrypt(message,mdp);
             encrypted = encrypted.toString(CryptoJS.enc.Utf8);
             function write(){
                 const text = document.getElementById('message');
-                text.textContent = ("Le message encrypté est: \n" + encrypted);
+                text.innerHTML = ("Le message encrypté est: \n" + encrypted);
             }
             write()
         }
         function decrypter(){
             message= document.getElementById("inputmessage").value;
             mdp= document.getElementById("inputmdp").value;
-            var decrypted= decrypt(message,mdp);
+            var decrypted= CryptoJS.AES.decrypt(message,mdp);
             decrypted = decrypted.toString(CryptoJS.enc.Utf8);
             function write(){
                 const text = document.getElementById('message');
-                text.textContent = ("Le message décrypté est: \n" + decrypted);
+                text.innerHTML = ("Le message décrypté est: \n" + decrypted);
             }
             write()
         }
