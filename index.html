@@ -27,6 +27,7 @@
         <a href="gamesindex.html">Jeux</a>
         <a href="utilindex.html"> Utiles </a>
         <a id="login" style="display: none;" href="https://discord.com/api/oauth2/authorize?client_id=949691139978592276&redirect_uri=https%3A%2F%2Fgzod01.github.io%2F&response_type=code&scope=identify">Se connecter avec Discord</a>
+        <a id="loginok"></a>
     </div>
     <div class= "languagebar">
         <a onClick="changelang('fr')">Français</a>
@@ -53,7 +54,9 @@
                     sessionStorage.setItem('ID', id)
                     console.log(id)
                     sessionStorage.setItem('discord?',1)
-                    document.getElementById('info').innerText += ` ${username}#${discriminator}`;
+                    sessionStorage.setItem('username', username)
+                    sessionStorage.setItem('discriminator', discriminator)
+                    document.getElementById('loginok').innerText += ` ${username}#${discriminator}`;
                 })
                 .catch(console.error);
         };
