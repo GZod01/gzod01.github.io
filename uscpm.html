@@ -12,6 +12,18 @@
             - <button id="Savebutton">Sauvegarder</button>
             - <button onclick="makeimport()">MakeImport</button>
             <script>
+                window.onload = function(){
+                    if (sessionStorage.getItem('discord?')===1){
+                        // programme de rich presence
+                    }
+                    else{}
+                }
+                window.onunload = function(){
+                    if sessionStorage.getItem('discord?'== 1){
+                        // programme de fin de rich presence
+                    }
+                    else{}
+                }
                 c = a.getContext("2d");
                 localStorage["scpm"] = localStorage["scpm"] || 1;
                 d = 0;
