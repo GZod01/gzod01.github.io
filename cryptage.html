@@ -17,24 +17,24 @@
         function crypter(){
             var message= JSON.stringify(document.getElementById("inputmessage").value);
             var mdp= JSON.stringify(document.getElementById("inputmdp").value);
-            var encrypted= CryptoJS.AES.encrypt(message,mdp);
+            var encrypted = CryptoJS.AES.encrypt(message, mdp);
             encrypted = encrypted.toString(CryptoJS.enc.Utf8);
-            function write(){
+            function write(variabletowrite){
                 const text = document.getElementById('message');
-                text.innerHTML = (`Le message encrypté est: ${encrypted}`);
+                text.innerHTML = (`Le message encrypté est: ${variabletowrite}`);
             }
-            write()
+            write(encrypted)
         }
         function decrypter(){
             message= document.getElementById("inputmessage").value;
             mdp= document.getElementById("inputmdp").value;
-            var decrypted= CryptoJS.AES.decrypt(message,mdp);
+            var decrypted = CryptoJS.AES.decrypt(message, mdp);
             decrypted = decrypted.toString(CryptoJS.enc.Utf8);
-            function write(){
+            function write(variabletowrite){
                 const text = document.getElementById('message');
-                text.innerHTML = (`Le message décrypté est: ${decrypted}`);
+                text.innerHTML = (`Le message décrypté est: ${variabletowrite}`);
             }
-            write()
+            write(decrypted)
         }
         var objet= document.getElementById("encrsubmit");
         objet.addEventListener("click", crypter);
