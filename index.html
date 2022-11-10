@@ -26,11 +26,37 @@
         <a href="index.html">Accueil</a>
         <a href="gamesindex.html">Jeux</a>
         <a href="utilindex.html"> Utiles </a>
+        <a id="login" style="display: none;" href="https://discord.com/api/oauth2/authorize?client_id=949691139978592276&redirect_uri=https%3A%2F%2Fgzod01.github.io%2F&response_type=code&scope=identify">Se connecter avec Discord</a>
     </div>
     <div class= "languagebar">
         <a onClick="changelang('fr')">Français</a>
         <a onClick="changelang('en')">English</a>
     </div>
     <zero-md id="readme" src="README.md"></zero-md>
+    <script>
+        window.onload = () => {
+            const fragment = new URLSearchParams(window.location.hash.slice(1));
+            const [accessToken, tokenType] = [fragment.get('access_token'), fragment.get('token_type')];
+
+            if (!accessToken) {
+                return (document.getElementById('login').style.display = 'block');
+            }
+
+            fetch('https://discord.com/api/users/@me', {
+                headers: {
+                    authorization: `${tokenType} ${accessToken}`,
+                },
+            })
+                .then(result => result.json())
+                .then(response => {
+                    const { username, discriminator, id } = response;
+                    sessionStorage.setItem('ID', id)
+                    console.log(id)
+                    sessionStorage.setItem('discord?',1)
+                    document.getElementById('info').innerText += ` ${username}#${discriminator}`;
+                })
+                .catch(console.error);
+        };
+    </script>
 </body>
 </html>
