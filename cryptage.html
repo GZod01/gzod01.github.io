@@ -27,7 +27,7 @@
             document.getElementById("message").innerHTML = encrypted
         }
         function decrypter(){
-            var message= JSON.stringify(document.getElementById("inputmessage").value);
+            var message= document.getElementById("inputmessage").value;
             console.log(message);
             var mdp= JSON.stringify(document.getElementById("inputmdp").value);
             console.log(mdp);
@@ -35,7 +35,7 @@
             console.log(decrypted);
             var decryptedstring = decrypted.toString(CryptoJS.enc.Utf8);
             console.log(decryptedstring);
-            document.getElementById("message").innerHTML = decrypted
+            document.getElementById("message").innerHTML = decryptedstring
         }
         var objet= document.getElementById("encrsubmit");
         objet.addEventListener("click", crypter);
