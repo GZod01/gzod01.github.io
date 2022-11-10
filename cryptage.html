@@ -21,7 +21,7 @@
             encrypted = encrypted.toString(CryptoJS.enc.Utf8);
             function write(){
                 const text = document.getElementById('message');
-                text.innerHTML = ("Le message encrypté est: \n" + encrypted);
+                text.innerHTML = (`Le message encrypté est: ${encrypted}`);
             }
             write()
         }
@@ -32,7 +32,7 @@
             decrypted = decrypted.toString(CryptoJS.enc.Utf8);
             function write(){
                 const text = document.getElementById('message');
-                text.innerHTML = ("Le message décrypté est: \n" + decrypted);
+                text.innerHTML = (`Le message décrypté est: ${decrypted}`);
             }
             write()
         }
