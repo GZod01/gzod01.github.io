@@ -14,13 +14,23 @@
             <script>
                 window.onload = function(){
                     if (sessionStorage.getItem('discord?')===1){
-                        // programme de rich presence
+                        const client = require('discord-rich-presence/browser')(sessionStorage.getItem('id'));
+                        client.updatePresence({
+                          state: 'slithering',
+                          details: '🐍',
+                          startTimestamp: Date.now(),
+                          endTimestamp: Date.now() + 1337,
+                          largeImageKey: 'snek_large',
+                          smallImageKey: 'snek_small',
+                          instance: true,
+                        });
                     }
                     else{}
                 }
                 window.onunload = function(){
                     if sessionStorage.getItem('discord?'== 1){
-                        // programme de fin de rich presence
+                        const client = require('discord-rich-presence/browser')(sessionStorage.getItem('id'));
+                        client.updatePresence({});
                     }
                     else{}
                 }
