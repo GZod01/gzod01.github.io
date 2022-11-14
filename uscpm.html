@@ -34,6 +34,7 @@
                     }
                     else{}
                 }*/
+                const fs = require('fs');
                 c = a.getContext("2d");
                 localStorage["scpm"] = localStorage["scpm"] || 1;
                 d = 0;
@@ -1906,7 +1907,7 @@
                 var pagepagepage = document.getElementById("jeu")
                 function sauvegarder(){
                     place = prompt("Place ou sauvegarder: ")
-                    if (place=='make'){
+                    if (place === 'make'){
                         localStorage.setItem('makesave',JSON.stringify(t))
                     }
                     else{
@@ -1930,6 +1931,16 @@
                 }
                 function makereimport(){
                     t= JSON.parse(localStorage.getItem('makesave'))
+                }
+                function savesavesave(){
+                    texttosave = JSON.stringify(levels)
+                    fs.writeFile(cheminfichier, texttosave, function(err) {
+                    if(err) {
+                    return console.log(err);
+                    } else {
+                    console.log("le fichier est sauvegarder");
+                    }
+                    });
                 }
                 var sauvegarderbouton = document.getElementById("Savebutton");
                 sauvegarderbouton.addEventListener("click", sauvegarder);
