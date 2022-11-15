@@ -1932,15 +1932,23 @@
                 function makereimport(){
                     t= JSON.parse(localStorage.getItem('makesave'))
                 }
-                function savesavesave(){
-                    texttosave = JSON.stringify(levels)
-                    fs.writeFile(cheminfichier, texttosave, function(err) {
-                    if(err) {
-                    return console.log(err);
-                    } else {
-                    console.log("le fichier est sauvegarder");
+                function savesavesave(data, filename, type){
+                    / Function to download data to a file
+                    var file = new Blob([data], {type: type});
+                    if (window.navigator.msSaveOrOpenBlob) // IE10+
+                        window.navigator.msSaveOrOpenBlob(file, filename);
+                    else { // Others
+                        var a = document.createElement("a"),
+                                url = URL.createObjectURL(file);
+                        a.href = url;
+                        a.download = filename;
+                        document.body.appendChild(a);
+                        a.click();
+                        setTimeout(function() {
+                            document.body.removeChild(a);
+                            window.URL.revokeObjectURL(url);  
+                        }, 0); 
                     }
-                    });
                 }
                 var sauvegarderbouton = document.getElementById("Savebutton");
                 sauvegarderbouton.addEventListener("click", sauvegarder);
