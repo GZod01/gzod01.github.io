@@ -7,68 +7,26 @@
     <title>Inscription</title>
   </head>
   <body class="container mt-5">
-    <form onsubmit="mailto:contact@yourdomain.com">
-      <h1>Inscription à la modération</h1>
+    <form onsubmit="connexion.html">
+      <h1>Inscriptions</h1>
       <div class="mb-3">
         <label for="emailInput" class="form-label">Entrez votre adresse email<abbr title="Obligatoire" style="color: red">*</abbr></label>
         <input type="email" class="form-control" id="emailInput">
       </div>
       <div class="mb-3">
-        <label for="discordInput" class="form-label">Entrez votre username Discord (ex: username#0000) (facultatif, si vous ne voulez pas écrivez none)<abbr title="Obligatoire" style="color: red">*</abbr></label>
-        <input type="text" class="form-control" id="discordInput">
+        <label for="nameInput" class="form-label">Entrez votre nom d'utilisateur (vrai nom ou pseudo)<abbr title="Obligatoire" style="color: red">*</abbr></label>
+        <input type="text" class="form-control" id="nameInput" name="username">
       </div>
       <div class="mb-3">
-        <label for="telInput" class="form-label">Entrez votre numéro de téléphone (facultatif, si vous ne voulez pas écrivez none)<abbr title="Obligatoire" style="color: red">*</abbr></label>
-        <input type="text" class="form-control" id="telInput">
-      </div>
-      <div class="mb-3">
-        <label for="messageInput" class="form-label">Entrez votre texte de candidature<abbr title="Obligatoire" style="color: red">*</abbr></label>
-        <textarea class="form-control" id="messageInput" rows="3"></textarea>
+        <label for="mdpInput" class="form-label">Entrez votre mot de passe (6 charactères minimum)<abbr title="Obligatoire" style="color: red">*</abbr></label>
+        <input type="password" class="form-control" id="pwdInput" name="password" minlength="8" required>
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
     <script>
-      async function sendContact(ev) {
-        ev.preventDefault();
-
-        const senderEmail = document
-          .getElementById('emailInput').value;
-        const senderMessage = document
-          .getElementById('messageInput').value;
-        const sendertel = document
-          .getElementById('telInput').value;
-        const senderdiscord = document
-          .getElementById('discordInput').value;
-
-        const webhookBody = {
-          embeds: [{
-            title: 'inscrption pieges',
-            fields: [
-              { name: 'Email du candidat', value: senderEmail },
-              { name: 'Discord du candidat', value: senderdiscord},
-              { name: 'Message', value: senderMessage },
-              { name: 'Numéro de téléphone', value: sendertel }
-            ]
-          }],
-        };
-        var cryptedwebhookUrl = 'U2FsdGVkX18ZWJ8PR6UAnbvCRfaogjxRPkAQgRgRwBhzfbTig1EC7wODwNg+jKcNLFmzGKSrR6r3CfYABBy4Jmbi6hJnh/USeq3J7OX91fq+JjBMwnmKKxvKkZ0Gtg79ziwsZTEcsRJLtQdAEvb2nmKDru7GRNh7HeJUq/R+PsakC0M2r33Ix6ux9qOlPbaSIkeWoxQO/YSE202RfY0wBQ=='
-        var decryptedwebhookUrl = CryptoJS.AES.decrypt(cryptedwebhookUrl,"spaconiummdp");
-        const webhookUrl = decryptedwebhookUrl.toString(CryptoJS.enc.Utf8);
-
-        const response = await fetch(webhookUrl, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(webhookBody),
-        });
-
-        if (response.ok) {
-          alert('Candidature envoyée avec succès');
-        } else {
-          alert('Il y a eu une Erreur, rééssayez. Verifiez que vous avez bien complété toutes les cases.');
-        }
+      function x (zd){
+        console.log("hello")
       }
-    </script>
+    </scipt>
   </body>
 </html>
