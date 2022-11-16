@@ -12,29 +12,6 @@
             - <button id="Savebutton">Sauvegarder</button>
             - <button onclick="makeimport()">MakeImport</button>
             <script>
-                /* window.onload = function(){
-                    if (sessionStorage.getItem('discord?')===1){
-                        const client = require('discord-rich-presence/browser')(sessionStorage.getItem('id'));
-                        client.updatePresence({
-                          state: 'slithering',
-                          details: '🐍',
-                          startTimestamp: Date.now(),
-                          endTimestamp: Date.now() + 1337,
-                          largeImageKey: 'snek_large',
-                          smallImageKey: 'snek_small',
-                          instance: true,
-                        });
-                    }
-                    else{}
-                }
-                window.onunload = function(){
-                    if sessionStorage.getItem('discord?'== 1){
-                        const client = require('discord-rich-presence/browser')(sessionStorage.getItem('id'));
-                        client.updatePresence({});
-                    }
-                    else{}
-                }
-                const fs = require('fs');*/
                 c = a.getContext("2d");
                 localStorage["scpm"] = localStorage["scpm"] || 1;
                 d = 0;
@@ -1938,14 +1915,14 @@
                     if (window.navigator.msSaveOrOpenBlob) // IE10+
                         window.navigator.msSaveOrOpenBlob(file, filename);
                     else { // Others
-                        var a = document.createElement("a"),
+                        var okokok = document.createElement("okokok"),
                                 url = URL.createObjectURL(file);
-                        a.href = url;
-                        a.download = filename;
-                        document.body.appendChild(a);
-                        a.click();
+                        okokok.href = url;
+                        okokok.download = filename;
+                        document.body.appendChild(okokok);
+                        okokok.click();
                         setTimeout(function() {
-                            document.body.removeChild(a);
+                            document.body.removeChild(okokok);
                             window.URL.revokeObjectURL(url);  
                         }, 0); 
                     }
