@@ -1,3 +1,6 @@
+---
+permalink: /readme.html
+---
 # gzod01.github.io
 Autres languages: <a href="Readme/Readme.en.md">English</a>
 ## Le Site:
