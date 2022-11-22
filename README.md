@@ -1,9 +1,8 @@
-<!---->
-<a href='index.html'>Accueil</a>
 ---
 permalink: /readme.html
 ---
-<!---->
+<a href='index.html'>Accueil</a>
+
 # gzod01.github.io
 Autres languages: <a href="Readme/Readme.en.md">English</a>
 ## Le Site:
