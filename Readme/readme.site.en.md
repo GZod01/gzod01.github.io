@@ -1,5 +1,5 @@
 ---
-permalink : /en.readme.html/
+permalink : /en.readme.html
 ---
 # gzod01.github.io
 ## The Website
