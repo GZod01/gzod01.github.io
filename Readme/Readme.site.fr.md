@@ -1,5 +1,5 @@
 ---
-permalink: /readme.html
+permalink: readme.html
 ---
 <a href='index.html'>Accueil du site</a>
 
