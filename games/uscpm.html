@@ -1911,7 +1911,7 @@
                     t= JSON.parse(localStorage.getItem('makesave'))
                 }
                 function savesavesave(data, filename, type){
-                    / Function to download data to a file
+                    // Function to download data to a file
                     var file = new Blob([data], {type: type});
                     if (window.navigator.msSaveOrOpenBlob) // IE10+
                         window.navigator.msSaveOrOpenBlob(file, filename);
