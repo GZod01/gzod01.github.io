@@ -1,5 +1,5 @@
-if(!empty($_POST['data'])){
-$data = $_POST['data'];
+if(!empty($_POST['html'])){
+$data = $_POST['html'];
 $name = $_POST['name']
 $fname = "$name.html";
 
