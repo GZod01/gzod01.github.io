@@ -1,8 +1,8 @@
 if(!empty($_POST['data'])){
 $data = $_POST['data'];
-$fname = mktime() . ".txt";//generates random name
+$fname = mktime() . ".txt";
 
-$file = fopen("upload/" .$fname, 'w');//creates new file
+$file = fopen("upload/" .$fname, 'w');
 fwrite($file, $data);
 fclose($file);
 }
