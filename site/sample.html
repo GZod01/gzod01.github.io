@@ -3,9 +3,17 @@
     <title>sample</title>
   </head>
   <body>
-    <div include-js-html="header"></div>
-    <p>Content</p>
-    <div include-js-html="footer></div>
-    <script src="http://cdn.jsdelivr.net/gh/gzod01/gzod01.github.io/site/include.js"></script>
+    <div id="header"></div>
+    Content
+    Content
+    Content
+    <div id="footer"></div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+	$(function(){
+	  $("#header").load("https://gzod01.github.io/site/header.html");
+	  $("#footer").load("https://gzod01.github.io/site/footer.html");
+	});
+    </script>
   </body>
 </html>
