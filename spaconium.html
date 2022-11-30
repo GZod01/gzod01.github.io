@@ -7,10 +7,19 @@
     <title>Spaconium</title>
 </head>
 <body>
+    <div id="header"></div>
     <div class="Title"><h1>Spaconium</h1></div>
     <div class="Description"><h3>Le mod Minecraft Spaconium est un mod français regroupant plusieurs fonctionnalités:</h3>
     </div>
     <h2>Le Serveur:</h2>
     <iframe src="https://canary.discord.com/widget?id=978527342811045888&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+    <div id="footer"></div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+	$(function(){
+	  $("#header").load("https://gzod01.github.io/site/header.html");
+	  $("#footer").load("https://gzod01.github.io/site/footer.html");
+	});
+    </script>
 </body>
 </html>
