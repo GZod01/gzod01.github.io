@@ -1,3 +1,17 @@
+body {
+  background-color: lightgray;
+  width: 95%;
+  left: 10px;
+  right: 10px;
+}
+.header{
+  position:fixed;
+  background-color: DarkSlateGray;
+  color: Black;
+  width: 100%;
+  left: 0px;
+  right: 0px;
+}
 .footer{
   position:fixed;
   background-color: rgb(38, 42, 48);
