@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArticleGenerator</title>
+</head>
+<body>
+    <div id="header"></div>
+    <div id="content">
+        <h1>The Article Generator</h1>
+        <form onsubmit="articlegenerator()">
+            <div>
+                <label for="title">The title:</label>
+                <input id="title" type="text">
+            </div>
+            <div>
+                <label for="fewdescript">Few Description:</label>
+                <input id="fewdescript" type="text">
+            </div>
+            <div>
+                <label for="mainimage">The article main image url: </label>
+                <input id="mainimage" type="url">
+            </div>
+            <div>
+                <label for="articlecontent">The article content: </label>
+                <textarea id="articlecontent"></textarea>
+            </div>
+            <div>
+                <label><b>The infos:</b></label>
+                <label for="author">-Author:</label>
+                <input type="text" id="author" placeholder="author">
+                <label for="dateofpublish">-Date:</label>
+                <input type="date" id="dateofpublish">
+                <label for="other">-Other informations:</label>
+                <textarea id="other"></textarea>
+            </div>
+        </form>
+        <a class="htmldownload"></a>
+    </div>
+    <div id="footer"></div>
+    <script src="articlegenerator.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+	$(function(){
+	  $("#header").load("https://gzod01.github.io/site/header.html");
+	  $("#footer").load("https://gzod01.github.io/site/footer.html");
+	});
+    </script>
+</body>
+</html>
