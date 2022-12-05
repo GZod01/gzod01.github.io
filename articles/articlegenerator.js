@@ -50,7 +50,7 @@ function articlegenerator() {
 console.log(articlehtml)
 const link = document.querySelector('a.htmldownload');
 
-let name = title;
+let name = title.toString().toLowerCase();
 
 let text = articlehtml;
 
