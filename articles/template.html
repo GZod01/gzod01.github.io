@@ -1,31 +1,42 @@
-<div id = "header"></div>
-<div id = "content">
-	<div id= "title">
-		<h1>The Article Title</h1>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Template</title>
+</head>
+<body>
+	<div id = "header"></div>
+	<div id = "content">
+		<div id= "title">
+			<h1>The Article Title</h1>
+		</div>
+		<div id = "main image">
+			<img src="the article image">
+		</div>
+		<div id = "few description">
+			<p>A few descriptions of the article</p>
+		</div>
+		<div id = "articlecontent">
+			<p> the article main content</p>
+			<h2>blablabla</h2>
+			<p> with some images:</p>
+			<img src="imageofarticle">
+			<p>an article...</p>
+		</div> 
+		<div id = "infos">
+			<p> the infos about the article</p>
+			<p>Author, date, etc. <a href="blabla">blabla</a> <span onclick="console.log('hello')">hello</span></p>
+		</div>
 	</div>
-	<div id = "main image">
-		<img src="the article image">
-	</div>
-	<div id = "few description">
-		<p>A few descriptions of the article</p>
-	</div>
-	<div id = "articlecontent">
-		<p> the article main content</p>
-		<h2>blablabla</h2>
-		<p> with some images:</p>
-		<img src="imageofarticle">
-		<p>an article...</p>
-	</div> 
-	<div id = "infos">
-		<p> the infos about the article</p>
-		<p>Author, date, etc. <a href="blabla">blabla</a> <span onclick="console.log("hello")>hello</span></p>
-	</div>
-</div>
-<div id= "footer"></div>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-  $(function(){
-	  $("#header").load("https://gzod01.github.io/site/header.html");
-	  $("#footer").load("https://gzod01.github.io/site/footer.html");
-	});
-</script>
+	<div id= "footer"></div>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+	$(function(){
+		$("#header").load("https://gzod01.github.io/site/header.html");
+		$("#footer").load("https://gzod01.github.io/site/footer.html");
+		});
+	</script>
+</body>
+</html>
