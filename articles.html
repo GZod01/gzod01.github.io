@@ -1,0 +1,27 @@
+html5
+
+<div id="header"></div>
+<div id="content">
+  <div id="article0"></div>
+  <div id="article1"></div>
+  <div id="article2"></div>
+</div>
+<div id="footer"></div>
+<script>
+  var articles = [
+    {title: title/*get the last article title*/,
+     mainimage: image/*get the last article mainimage*/,
+     description: descript /*get the last article fewdescription*/,
+    },
+    {/*the same but for the article before the last*/},
+    {/*the same but for the article before the before the last*/},
+  ]
+  document.getelementbyid("article0").innerHTML =  `<h2>${articles[0].title}</h2><p>${articles[0].description}</p><img src="${article[0].mainimage}">`
+</script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+	$(function(){
+	  $("#header").load("https://gzod01.github.io/site/header.html");
+	  $("#footer").load("https://gzod01.github.io/site/footer.html");
+	});
+</script>
