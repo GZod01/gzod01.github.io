@@ -56,5 +56,5 @@ let text = articlehtml;
 
 link.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
 
-link.setAttribute('download', `${name.toLowerCase()}.txt`);
+link.setAttribute('download', `${name}.txt`);
 }
