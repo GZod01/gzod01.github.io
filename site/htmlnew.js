@@ -24,5 +24,5 @@ var contenthtml= `
 data.append("html" , contenthtml);
 data.append("name" , thename)
 var xhr = new XMLHttpRequest();
-xhr.open( 'post', '/path/to/php', true );
+xhr.open( 'post', 'htmlnew.php', true );
 xhr.send(data);
