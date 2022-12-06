@@ -10,31 +10,35 @@
     <div id="header"></div>
     <div id="content">
         <h1>The Article Generator</h1>
-        <form onsubmit="articlegenerator()">
+        <form onsubmit="articlegenerator();return false">
             <div>
                 <label for="title">The title:</label>
                 <input id="title" type="text">
             </div>
+		<br>
             <div>
                 <label for="fewdescript">Few Description:</label>
                 <input id="fewdescript" type="text">
             </div>
+		<br>
             <div>
                 <label for="mainimage">The article main image url: </label>
                 <input id="mainimage" type="url">
             </div>
+		<br>
             <div>
                 <label for="articlecontent">The article content: </label>
                 <textarea id="articlecontent"></textarea>
             </div>
+		<br>
             <div>
-                <label><b>The infos:</b></label>
+                <label><b>The infos:</b></label><br>
                 <label for="author">-Author:</label>
-                <input type="text" id="author" placeholder="author">
+                <input type="text" id="author" placeholder="author"><br>
                 <label for="dateofpublish">-Date:</label>
-                <input type="date" id="dateofpublish">
+                <input type="date" id="dateofpublish"><br>
                 <label for="other">-Other informations:</label>
-                <textarea id="other"></textarea>
+                <textarea id="other" required='false'></textarea>
             </div>
             <input type="submit">
         </form>
