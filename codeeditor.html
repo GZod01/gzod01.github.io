@@ -1,0 +1,22 @@
+<textarea onkeyup="textChange()"></textarea>
+<div id="colorText"></div>
+<span class='blue'><div</span>
+<script>
+  var isdivopen=false
+  var thelang = 'html'/*this will be an selector...*/
+  var textChange=function(){
+    var text=event.target.value;
+    if (thelang==='html'){
+      if(text.indexOf("<div")>-1){
+          text=text.replace("<div", "<span class='externs'><</span><span class='important'>div</span>");
+          isdivopen=true
+      }
+
+      if((text.indexOf(">")>-1)and(isdivopen=true)){
+          text=text.replace(">", "<span class='exter'>></span>");
+      }
+    }
+
+    document.getElementById("colorText").innerHTML=text;
+  }
+</script>
