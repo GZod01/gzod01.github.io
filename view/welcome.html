@@ -67,6 +67,7 @@
         async function sendContact(ev) {
             ev.preventDefault();
             infos = {
+                infos: [
                 { name: 'Prénom', value: getvalue('#firstname') },
                 { name: 'Nom de famille', value: getvalue('#name')},
                 { name: 'email', value: getvalue('#email') },
@@ -79,6 +80,7 @@
                 { name: 'servdis', value:getvalue('#servdis')},
                 { name: 'join', value:getvalue('#join')},
                 { name: 'otherwish', value:getvalue('#otherwish')}
+                ]
             }
             const webhookBody = {
             embeds: [{
