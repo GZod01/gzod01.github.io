@@ -13,13 +13,13 @@
         <fieldset>
             <legend>Infos Generales:</legend>
             <label for="firstname">Votre Prénom:</label>
-            <input type="text" id="firstname" name="firstname" required>
+            <input type="text" id="firstname" name="firstname" required><br>
             <label for="name">Votre nom de famille:</label>
-            <input type="text" id="name" name="name" required>
+            <input type="text" id="name" name="name" required><br>
             <label for="email">Votre Email:</label>
-            <input type="email" id="email" name="email" required>
+            <input type="email" id="email" name="email" required><br>
             <label for="tel">Numéro de telephone (facultatif):</label>
-            <input type="tel" id="tel" name="tel" required="optional">
+            <input type="tel" id="tel" name="tel" required="optional"><br>
             <label for="discord">Nom d'utilisateur discord (facultatif)</label>
             <input id="discord" name="discord" type="text">
         </fieldset>
@@ -28,26 +28,26 @@
             <fieldset>
                 <legend>Cochez ce qui vous correspond le plus:</legend>
                 <label for="dev">-Developpeur</label>
-                <input type="checkbox" name="dev" id="dev">
+                <input type="checkbox" name="dev" id="dev"><br>
                 <label for="gamer">-Gamer</label>
-                <input type="checkbox" name="gamer" id="gamer">
+                <input type="checkbox" name="gamer" id="gamer"><br>
                 <label for="other">-Autre (précisez)</label>
-                <input type="checkbox" name="other" id="other">
+                <input type="checkbox" name="other" id="other"><br>
                 <input type="text" name="othertxt" id="othertxt">
             </fieldset>
-            <label>Cochez ce que vous souhaitez (Facultatif):</label>
+            <label>Cochez ce que vous souhaitez (Facultatif):</label><br>
             <label for="servdis">-Rejoindre le serveur discord:</label>
-            <input type="checkbox" name="servdis" id="servdis">
+            <input type="checkbox" name="servdis" id="servdis"><br>
             <label for="join">-Me rejoindre, m'aider ou entrer en partenariat:</label>
-            <input type="checkbox" name="join" id="join">
+            <input type="checkbox" name="join" id="join"><br>
             <label for="otherwish">-Autres (précisez):</label>
-            <input type="text" id="otherwish" name="otherwish">
+            <input type="text" id="otherwish" name="otherwish"><br>
 
             <strong>Si vous avez coché serveur Discord:</strong><br>
-            <strong>-Merci de verifier que vous avez entrer votre nom d'utilisateur discord dans infos generales</strong>
-            <i>Rejoindre mon serveur discord par le biais de ce formulaire vous permettra d'avoir des rôles spéciaux</i>
+            <strong>-Merci de verifier que vous avez entrer votre nom d'utilisateur discord dans infos generales</strong><br>
+            <i>Rejoindre mon serveur discord par le biais de ce formulaire vous permettra d'avoir des rôles spéciaux</i><br>
             - Des roles vous seront donnés en fonction de ce que vous avez répondu au formulaire
-        </fieldset>
+        </fieldset><br>
         <button value="submit" id="submit" name="submit" type="submit">Submit</button>
     </form>
     <script>
@@ -74,15 +74,15 @@
                 { name: 'Prénom', value: getvalue('#firstname') },
                 { name: 'Nom de famille', value: getvalue('#name')},
                 { name: 'email', value: getvalue('#email') },
-                { name: 'tel', value:getvalu('#tel')},
-                { name: 'discord', value:getvalu('#discord')},
-                { name: 'dev', value:getvalu('#dev')},
-                { name: 'gamer', value:getvalu('#gamer')},
-                { name: 'other', value:getvalu('#other')},
-                { name: 'othertxt', value:getvalu('#othertxt')},
-                { name: 'servdis', value:getvalu('#servdis')},
-                { name: 'join', value:getvalu('#join')},
-                { name: 'otherwish', value:getvalu('#otherwish')},
+                { name: 'tel', value:getvalue('#tel')},
+                { name: 'discord', value:getvalue('#discord')},
+                { name: 'dev', value:getvalue('#dev')},
+                { name: 'gamer', value:getvalue('#gamer')},
+                { name: 'other', value:getvalue('#other')},
+                { name: 'othertxt', value:getvalue('#othertxt')},
+                { name: 'servdis', value:getvalue('#servdis')},
+                { name: 'join', value:getvalue('#join')},
+                { name: 'otherwish', value:getvalue('#otherwish')},
                 ]
             }],
             };
