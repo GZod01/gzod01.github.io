@@ -1,1 +1,52 @@
-<!Doctype html>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+</head>
+<body>
+    <h1>Bienvenue!</h1>
+    <form onsubmit="send()">
+        <fieldset>
+            <legend>Infos Generales:</legend>
+            <label for="firstname">Votre Prénom:</label>
+            <input type="text" id="firstname" name="firstname" required>
+            <label for="name">Votre nom de famille:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Votre Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="tel">Numéro de telephone (facultatif):</label>
+            <input type="tel" id="tel" name="tel" required="optional">
+            <label for="discord">Nom d'utilisateur discord (facultatif)</label>
+            <input id="discord" name="discord" type="text">
+        </fieldset>
+        <fieldset>
+            <legend>Infos plus précises:</legend>
+            <fieldset>
+                <legend>Cochez ce qui vous correspond le plus:</legend>
+                <label for="dev">-Developpeur</label>
+                <input type="checkbox" name="dev" id="dev">
+                <label for="gamer">-Gamer</label>
+                <input type="checkbox" name="gamer" id="gamer">
+                <label for="other">-Autre (précisez)</label>
+                <input type="checkbox" name="other" id="other">
+                <input type="text" name="othertxt" id="othertxt">
+            </fieldset>
+            <label>Cochez ce que vous souhaitez (Facultatif):</label>
+            <label for="servdis">-Rejoindre le serveur discord:</label>
+            <input type="checkbox" name="servdis" id="servdis">
+            <label for="join">-Me rejoindre, m'aider ou entrer en partenariat:</label>
+            <input type="checkbox" name="join" id="join">
+            <label for="otherwish">-Autres (précisez):</label>
+            <input type="text" id="otherwish" name="otherwish">
+
+            <strong>Si vous avez coché serveur Discord:</strong><br>
+            <strong>-Merci de verifier que vous avez entrer votre nom d'utilisateur discord dans infos generales</strong>
+            <i>Rejoindre mon serveur discord par le biais de ce formulaire vous permettra d'avoir des rôles spéciaux</i>
+            - Des roles vous seront donnés en fonction de ce que vous avez répondu au formulaire
+        </fieldset>
+    </form>
+</body>
+</html>
