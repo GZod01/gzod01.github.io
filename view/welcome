@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js" integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o=" crossorigin="anonymous"></script>
     <title>Welcome</title>
 </head>
 <body>
     <h1>Bienvenue!</h1>
-    <form onsubmit="send()">
+    <form onsubmit="sendContact(event)">
         <fieldset>
             <legend>Infos Generales:</legend>
             <label for="firstname">Votre Prénom:</label>
@@ -47,6 +48,61 @@
             <i>Rejoindre mon serveur discord par le biais de ce formulaire vous permettra d'avoir des rôles spéciaux</i>
             - Des roles vous seront donnés en fonction de ce que vous avez répondu au formulaire
         </fieldset>
+        <button value="submit" id="submit" name="submit" type="submit">Submit</button>
     </form>
+    <script>
+        function getvalue(txt){
+            return document.querySelector(txt).value
+        }
+        window.onload(async function(){
+            const webhookUrl = CryptoJS.aes.decrypt('U2FsdGVkX18eKFNTFgWVTP9c0x0LOQem4MvBRUey3ijT4S3V/g3oLTPfxDmzK9UFEu0tttH1gClevy4RxDRkoKo6GmdkB8IzNtSvRIaW0OtlIijtMoIg4e/nMwZCptiYKFmkx7CqVvBhKFA8JJsbJcHJW8uZUsYjmmZTA89H4byuut8QrtvJJc1cgW+hH40S7RB6yirgr+d+/UNdOU3ZiQ==','GZOD01')
+            const response = await fetch(webhookUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: 'someone come to the welcome website'
+            })
+        })
+        async function sendContact(ev) {
+            ev.preventDefault();
+
+            const webhookBody = {
+            embeds: [{
+                title: 'Candidatures de testeur',
+                fields: [
+                { name: 'Prénom', value: getvalue('#firstname') },
+                { name: 'Nom de famille', value: getvalue('#name')},
+                { name: 'email', value: getvalue('#email') },
+                { name: 'tel', value:getvalu('#tel')},
+                { name: 'discord', value:getvalu('#discord')},
+                { name: 'dev', value:getvalu('#dev')},
+                { name: 'gamer', value:getvalu('#gamer')},
+                { name: 'other', value:getvalu('#other')},
+                { name: 'othertxt', value:getvalu('#othertxt')},
+                { name: 'servdis', value:getvalu('#servdis')},
+                { name: 'join', value:getvalu('#join')},
+                { name: 'otherwish', value:getvalu('#otherwish')},
+                ]
+            }],
+            };
+
+            const webhookUrl = CryptoJS.aes.decrypt('U2FsdGVkX18eKFNTFgWVTP9c0x0LOQem4MvBRUey3ijT4S3V/g3oLTPfxDmzK9UFEu0tttH1gClevy4RxDRkoKo6GmdkB8IzNtSvRIaW0OtlIijtMoIg4e/nMwZCptiYKFmkx7CqVvBhKFA8JJsbJcHJW8uZUsYjmmZTA89H4byuut8QrtvJJc1cgW+hH40S7RB6yirgr+d+/UNdOU3ZiQ==','GZOD01')
+
+            const response = await fetch(webhookUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(webhookBody),
+            });
+
+            if (response.ok) {
+            alert('Candidature envoyée avec succès');
+            } else {
+            alert('Il y a eu une erreur, rééssayez. Verifiez que vous avez bien complété toutes les cases.');
+            }
+        }
+    </script>
 </body>
 </html>
