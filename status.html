@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+  <style type="text/css">
+    #mon-reseau { width: 100%; height: 600px; border: 1px solid lightgray; }
+  </style>
+</head>
+<body>
+<div id="mon-reseau"></div>
+
+<script type="text/javascript">
+  // 1. Définir les nœuds (Ton serveur, tes VMs, tes services)
+  // Tu peux ajouter une propriété 'hidden: true' pour ceux qui ne doivent pas apparaitre tout de suite
+  var nodes = new vis.DataSet([
+    {id: 1, label: 'Serveur Physique', color: '#33cc33', shape: 'dot', size: 30}, // Vert = UP
+    {id: 2, label: 'VM Debian', color: '#ffcc00', shape: 'dot', hidden: true},    // Jaune = Warning
+    {id: 3, label: 'VM Windows', color: '#33cc33', shape: 'dot', hidden: true},
+    {id: 4, label: 'Service Nginx (Sur VM Debian)', color: '#33cc33', shape: 'dot', size: 10, hidden: true},
+    {id: 5, label: 'Service DB (Sur Serveur)', color: '#cc3333', shape: 'dot', size: 10, hidden: true} // Rouge = Down
+  ]);
+
+  // 2. Définir les liens
+  var edges = new vis.DataSet([
+    {from: 1, to: 2, hidden: true},
+    {from: 1, to: 3, hidden: true},
+    {from: 2, to: 4, hidden: true}, // Nginx sur VM Debian
+    {from: 1, to: 5, hidden: true}  // DB directement sur le serveur
+  ]);
+
+  var container = document.getElementById('mon-reseau');
+  var data = { nodes: nodes, edges: edges };
+  var options = {
+      nodes: { borderWidth: 2 },
+      interaction: { hover: true },
+      physics: { stabilization: false } // Pour l'effet "organique"
+  };
+  
+  var network = new vis.Network(container, data, options);
+
+  // 3. La logique "Développeur" : Gérer le clic
+  network.on("click", function (params) {
+      if (params.nodes.length > 0) {
+          var nodeId = params.nodes[0];
+          
+          // Logique simplifiée : Si je clique sur le nœud 1, je montre 2, 3 et 5
+          if(nodeId === 1) {
+              nodes.update([{id: 2, hidden: false}, {id: 3, hidden: false}, {id: 5, hidden: false}]);
+              edges.update([{id: 1, from: 1, to: 2, hidden: false}, {from: 1, to: 3, hidden: false}, {from: 1, to: 5, hidden: false}]);
+          }
+          // Si je clique sur le nœud 2 (VM), je montre le service 4
+          if(nodeId === 2) {
+              nodes.update([{id: 4, hidden: false}]);
+              edges.update([{from: 2, to: 4, hidden: false}]);
+          }
+      }
+  });
+</script>
+</body>
+</html>
